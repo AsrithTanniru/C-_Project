@@ -103,7 +103,7 @@ int main() {
         return -1;
     }
 
-    // Add a header to the CSV file if it is empty
+    
     ifstream infile("hospital_data.csv");
     bool isEmpty = infile.peek() == EOF;
     infile.close();
@@ -114,14 +114,14 @@ int main() {
             << "Consultation Fee,Treatment Cost,Medication Cost,Tax Rate,Total Amount\n";
     }
 
-        while (true) { // Loop to allow multiple entries
+        while (true) {
             string patientName, healthIssue, previousSurgery, gender, treatmentType;
             int patientAge;
 
             cout << "\n--- Enter Patient Details ---\n";
             cout << "Enter Patient Name (or type 'exit' to quit): ";
             getline(cin, patientName);
-            if (patientName == "exit") exit(0); // Exit condition
+            if (patientName == "exit") exit(0); 
 
             cout << "Enter Patient Age: ";
             cin >> patientAge;
@@ -186,7 +186,7 @@ int main() {
                  << totalAmount 
                  << endl;
 
-            // --- Write data to the file ---
+            // Data writing into the file.
             file << patientName << "," << patientAge << "," << gender << ","
                  << healthIssue << "," << previousSurgery << "," << treatmentType << ","
                  << doctorName << "," << doctorAge << "," << specialization << "," << experience << ","
